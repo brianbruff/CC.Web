@@ -26,7 +26,7 @@
                     title: 'Curves',
                     settings: {
                         nav: 1,
-                        content: '<i class="fa fa-dashboard"></i> Curves'
+                        content: '<i class="fa fa-bar-chart-o"></i> Curves'
                     }
                 }
             }, {

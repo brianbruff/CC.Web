@@ -14,7 +14,7 @@
 
         return service;
 
-        function getMessageCount() { return $q.when(72); }
+        function getMessageCount() { return $q.when(710); }
 
         function getPeople() {
             var people = [
