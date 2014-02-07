@@ -13,13 +13,13 @@
             description: 'Datagenic Dashboard.'
         };
         vm.messageCount = 0;
-        vm.people = [];
+        vm.categories = [];
         vm.title = 'Overview';
 
         activate();
 
         function activate() {
-            var promises = [getMessageCount(), getPeople()];
+            var promises = [getMessageCount(), getCurveCategories()];
             common.activateController(promises, controllerId)
                 .then(function () { log('Activated overview View'); });
         }
@@ -30,9 +30,9 @@
             });
         }
 
-        function getPeople() {
-            return datacontext.getPeople().then(function (data) {
-                return vm.people = data;
+        function getCurveCategories() {
+            return datacontext.getCurveCategories().then(function (data) {
+                return vm.categories = data;
             });
         }
     }

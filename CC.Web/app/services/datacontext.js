@@ -8,7 +8,7 @@
         var $q = common.$q;
 
         var service = {
-            getPeople: getPeople,
+            getCurveCategories: getCurveCategories,
             getMessageCount: getMessageCount
         };
 
@@ -16,13 +16,13 @@
 
         function getMessageCount() { return $q.when(710); }
 
-        function getPeople() {
-            var people = [
-                { firstName: 'Brian', lastName: 'Keating', age: 25, location: 'Ireland' },
-                { firstName: 'Colin', lastName: 'Hartley', age: 31, location: 'Essex' },
-                { firstName: 'Angular', lastName: 'DotJs', age: 35, location: 'Everywhere' }
+        function getCurveCategories() {
+            var categories = [
+                { name: 'BootGas', description: "Bootstrap Gas", curveCount: '44', status: "fa fa-thumbs-o-down" },
+                { name: 'BootOil', description: "Bootstrap Oil", curveCount: '15', status: "fa fa-thumbs-o-up" },
+                { name: 'RegressionOil', description: "Oil regression curves", curveCount: '51', status: "fa fa-thumbs-o-down" },
             ];
-            return $q.when(people);
+            return $q.when(categories);
         }
     }
 })();

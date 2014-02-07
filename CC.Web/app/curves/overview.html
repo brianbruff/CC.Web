@@ -5,9 +5,9 @@
                 <div class="col-md-12">
                     <ul class="today-datas">
                         <li class="blightblue">
-                            <div class="pull-left"><i class="fa fa-plane"></i></div>
+                            <div class="pull-left"><i class="fa fa-sitemap"></i></div>
                             <div class="datas-text pull-right">
-                                <span class="bold">May 18 - 19, 2015</span> Castle Resort, Neverland
+                                <span class="bold">15</span> Categories
                             </div>
                             <div class="clearfix"></div>
                         </li>
@@ -15,35 +15,59 @@
                         <li class="borange">
                             <div class="pull-left"><i class="fa fa-bar-chart-o"></i></div>
                             <div class="datas-text pull-right">
-                                <span class="bold">{{vm.messageCount}}</span> Curves
+                                <span class="bold">{{vm.messageCount}}</span> Definitions
                             </div>
                             <div class="clearfix"></div>
                         </li>
+
+                        <li class="bviolet">
+                            <div class="pull-left"><i class="fa fa-road"></i></div>
+                            <div class="datas-text pull-right">
+                                <span class="bold">22</span> Build types
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+
+                        <li class="bblue">
+                            <div class="pull-left"><i class="fa fa-info"></i></div>
+                            <div class="datas-text pull-right">
+                                <span class="bold">452 / 19</span> Success / Fail
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+
+                        <li class="bgreen">
+                            <div class="pull-left"><i class="fa fa-check"></i></div>
+                            <div class="datas-text pull-right">
+                                <span class="bold">Last Build</span>ETS.JKM.TFS.MID.USD_MMBTU
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+
 
                     </ul>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <div class="widget wviolet">
-                        <div data-cc-widget-header title="People"
-                             allow-collapse="true"></div>
-                        <div class="widget-content text-center text-info">
+                    <div class="widget wlightblue">
+                        <div data-cc-widget-header title="Categories" allow-collapse="true"></div>
+                        <div class="widget-content text-left text-info">
                             <table class="table table-condensed table-striped">
                                 <thead>
                                     <tr>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
-                                        <th>Age</th>
-                                        <th>Location</th>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Defintion Count</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr data-ng-repeat="p in vm.people">
-                                        <td>{{p.firstName}}</td>
-                                        <td>{{p.lastName}}</td>
-                                        <td>{{p.age}}</td>
-                                        <td>{{p.location}}</td>
+                                    <tr data-ng-repeat="p in vm.categories">
+                                        <td>{{p.name}}</td>
+                                        <td>{{p.description}}</td>
+                                        <td>{{p.curveCount}}</td>
+                                        <td><i class="{{p.status}}"></i></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -54,11 +78,27 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="widget wgreen">
-                        <div data-cc-widget-header title="{{vm.news.title}}"
-                             allow-collapse="true"></div>
-                        <div class="widget-content text-center text-info">
-                            <small>{{vm.news.description}}</small>
+                    <div class="widget wviolet">
+                        <div data-cc-widget-header title="Build types" allow-collapse="true"></div>
+                        <div class="widget-content text-left text-info">
+                            <table class="table table-condensed table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Defintion Count</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-ng-repeat="p in vm.categories">
+                                        <td>{{p.name}}</td>
+                                        <td>{{p.description}}</td>
+                                        <td>{{p.curveCount}}</td>
+                                        <td><i class="{{p.status}}"></i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                         <div class="widget-foot">
                             <div class="clearfix"></div>
