@@ -67,7 +67,7 @@
                                         <td>{{p.name}}</td>
                                         <td>{{p.description}}</td>
                                         <td>{{p.curveCount}}</td>
-                                        <td><i class="{{p.status}}"></i></td>
+                                        <td><i class="fa" data-ng-class="{'fa-thumbs-o-up faGreen' : p.status === true, 'fa-thumbs-o-down faRed' : p.status === false}"></i></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -91,11 +91,11 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr data-ng-repeat="p in vm.categories">
+                                    <tr data-ng-repeat="p in vm.types">
                                         <td>{{p.name}}</td>
                                         <td>{{p.description}}</td>
                                         <td>{{p.curveCount}}</td>
-                                        <td><i class="{{p.status}}"></i></td>
+                                        <td><i class="fa" data-ng-class="{'fa-thumbs-o-up faGreen' : p.status === true, 'fa-thumbs-o-down faRed' : p.status === false}" ></i></td>
                                     </tr>
                                 </tbody>
                             </table>

@@ -14,13 +14,14 @@
         };
         vm.messageCount = 0;
         vm.categories = [];
+        vm.types = [];
         vm.curveStatus = [];
         vm.title = 'Overview';
 
         activate();
 
         function activate() {
-            var promises = [getMessageCount(), getCurveCategories(), getCurveStatus()];
+            var promises = [getMessageCount(), getCurveCategories(), getCurveTypes(), getCurveStatus()];
             common.activateController(promises, controllerId)
                 .then(function () { log('Activated overview View'); });
         }
@@ -34,6 +35,12 @@
         function getCurveCategories() {
             return datacontext.getCurveCategories().then(function (data) {
                 return vm.categories = data;
+            });
+        }
+        
+        function getCurveTypes() {
+            return datacontext.getCurveTypes().then(function (data) {
+                return vm.types = data;
             });
         }
         

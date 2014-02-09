@@ -9,6 +9,7 @@
 
         var service = {
             getCurveCategories: getCurveCategories,
+            getCurveTypes: getCurveTypes,
             getMessageCount: getMessageCount,
             getCurveStatus: getCurveStatus
         };
@@ -19,11 +20,21 @@
 
         function getCurveCategories() {
             var categories = [
-                { name: 'BootGas', description: "Bootstrap Gas", curveCount: '44', status: "fa fa-thumbs-o-down" },
-                { name: 'BootOil', description: "Bootstrap Oil", curveCount: '15', status: "fa fa-thumbs-o-up" },
-                { name: 'RegressionOil', description: "Oil regression curves", curveCount: '51', status: "fa fa-thumbs-o-down" },
+                { name: 'BootGas', description: "Bootstrap Gas", curveCount: '44', status: true },
+                { name: 'BootOil', description: "Bootstrap Oil", curveCount: '15', status: true },
+                { name: 'RegressionOil', description: "Oil regression curves", curveCount: '51', status: false },
             ];
             return $q.when(categories);
+        }
+        
+        function getCurveTypes() {
+            var types = [
+                { name: 'BootootstrapGas', description: "Bootstrap Gas", curveCount: '34', status: true },
+                { name: 'BootootstrapGasSA', description: "Bootstrap Gas Seasonality", curveCount: '10', status: true },
+                { name: 'BootstrapOil', description: "Bootstrap Oil", curveCount: '15', status: false },
+                { name: 'Correlation', description: "Oil correlation curves", curveCount: '51', status: false },
+            ];
+            return $q.when(types);
         }
         
         function getCurveStatus() {
