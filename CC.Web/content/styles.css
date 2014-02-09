@@ -1,5 +1,8 @@
 ﻿/*#region Override background color theme */
 
+
+
+
 /*For Bootstrap 3*/
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 

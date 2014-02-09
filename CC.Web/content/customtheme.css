@@ -911,6 +911,16 @@ form {
         color: #555;
     }
 
+    /* Fa colors */
+
+    .faRed {
+        color: #fa3031;
+    }
+
+    .faGreen {
+        color: #43c83c;
+    }
+
     /* Widget colors */
 
     .widget.wred .widget-head {

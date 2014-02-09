@@ -14,12 +14,13 @@
         };
         vm.messageCount = 0;
         vm.categories = [];
+        vm.curveStatus = [];
         vm.title = 'Overview';
 
         activate();
 
         function activate() {
-            var promises = [getMessageCount(), getCurveCategories()];
+            var promises = [getMessageCount(), getCurveCategories(), getCurveStatus()];
             common.activateController(promises, controllerId)
                 .then(function () { log('Activated overview View'); });
         }
@@ -33,6 +34,12 @@
         function getCurveCategories() {
             return datacontext.getCurveCategories().then(function (data) {
                 return vm.categories = data;
+            });
+        }
+        
+        function getCurveStatus() {
+            return datacontext.getCurveStatus().then(function (data) {
+                return vm.curveStatus = data;
             });
         }
     }
