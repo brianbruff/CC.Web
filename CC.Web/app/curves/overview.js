@@ -12,6 +12,7 @@
             title: 'Genic Insight',
             description: 'Datagenic Dashboard.'
         };
+        vm.filterValue = 'BASE';
         vm.messageCount = 0;
         vm.categories = [];
         vm.types = [];

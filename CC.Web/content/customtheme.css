@@ -276,6 +276,12 @@ a.btn {
     border: 0 !important;
 }
 
+.byellow {
+    background: #ffd800 !important;
+    color: #fff !important;
+    border: 0 !important;
+}
+
 .bred {
     background: #fa3031 !important;
     color: #fff !important;
@@ -1001,6 +1007,7 @@ form {
 
     .today-datas li {
         display: inline-block;
+        min-width: 155px;
         margin-bottom: 5px;
         margin-right: 10px;
         padding: 1.5em 1em;
@@ -1280,6 +1287,29 @@ form {
     }
 
 /* Users ends */
+
+/*Brian Starts*/
+
+.headerSearch {
+    display: inline;
+}
+
+.headerSearch>input {
+    max-height: 25px;
+    max-width: 100px;
+    vertical-align: middle;
+    background: transparent;
+    color: white;
+    font-weight: 300;
+}
+
+.headerSearch>label {
+    max-height: 25px;
+    font-size: 13px !important;
+    font-weight: 300;
+}
+
+/*Brian Ends*/
 
 
 /*#endregion */

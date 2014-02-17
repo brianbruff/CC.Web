@@ -11,8 +11,8 @@
                             </div>
                             <div class="clearfix"></div>
                         </li>
-
-                        <li class="borange">
+                        
+                        <li class="byellow">
                             <div class="pull-left"><i class="fa fa-bar-chart-o"></i></div>
                             <div class="datas-text pull-right">
                                 <span class="bold">{{vm.messageCount}}</span> Definitions
@@ -35,6 +35,14 @@
                             </div>
                             <div class="clearfix"></div>
                         </li>
+                        
+                        <li class="borange">
+                            <div class="pull-left"><i class="fa fa-bar-chart-o"></i></div>
+                            <div class="datas-text pull-right">
+                                <span class="bold">0</span> Build Queue
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
 
                         <li class="bgreen">
                             <div class="pull-left"><i class="fa fa-check"></i></div>
@@ -43,37 +51,39 @@
                             </div>
                             <div class="clearfix"></div>
                         </li>
-
-
                     </ul>
                 </div>
             </div>
+
+
             <div class="row">
                 <div class="col-md-6">
                     <div class="widget wlightblue">
                         <div data-cc-widget-header title="Categories" allow-collapse="true"></div>
                         <div class="widget-content text-left text-info">
-                            <table class="table table-condensed table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Description</th>
-                                        <th>Defintion Count</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr data-ng-repeat="p in vm.categories">
-                                        <td>{{p.name}}</td>
-                                        <td>{{p.description}}</td>
-                                        <td>{{p.curveCount}}</td>
-                                        <td><i class="fa" data-ng-class="{'fa-thumbs-o-up faGreen' : p.status === true, 'fa-thumbs-o-down faRed' : p.status === false}"></i></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="widget-foot">
-                            <div class="clearfix"></div>
+                            <div class="table-responsive">
+                                <table class="table table-condensed table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Description</th>
+                                            <th>Defintion Count</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr data-ng-repeat="p in vm.categories">
+                                            <td>{{p.name}}</td>
+                                            <td>{{p.description}}</td>
+                                            <td>{{p.curveCount}}</td>
+                                            <td><i class="fa" data-ng-class="{'fa-thumbs-o-up faGreen' : p.status === true, 'fa-thumbs-o-down faRed' : p.status === false}"></i></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="widget-foot">
+                                <div class="clearfix"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -81,74 +91,82 @@
                     <div class="widget wviolet">
                         <div data-cc-widget-header title="Build types" allow-collapse="true"></div>
                         <div class="widget-content text-left text-info">
-                            <table class="table table-condensed table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Description</th>
-                                        <th>Defintion Count</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr data-ng-repeat="p in vm.types">
-                                        <td>{{p.name}}</td>
-                                        <td>{{p.description}}</td>
-                                        <td>{{p.curveCount}}</td>
-                                        <td><i class="fa" data-ng-class="{'fa-thumbs-o-up faGreen' : p.status === true, 'fa-thumbs-o-down faRed' : p.status === false}" ></i></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="widget-foot">
-                            <div class="clearfix"></div>
+                            <div class="table-responsive">
+                                <table class="table table-condensed table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Description</th>
+                                            <th>Defintion Count</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr data-ng-repeat="p in vm.types">
+                                            <td>{{p.name}}</td>
+                                            <td>{{p.description}}</td>
+                                            <td>{{p.curveCount}}</td>
+                                            <td><i class="fa" data-ng-class="{'fa-thumbs-o-up faGreen' : p.status === true, 'fa-thumbs-o-down faRed' : p.status === false}"></i></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="widget-foot">
+                                <div class="clearfix"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="widget worange">
-                        <div data-cc-widget-header title="Curves" allow-collapse="true"></div>
+                        <div data-cc-search-widget-header title="Curves" allow-collapse="true" filter-value="{{vm.filterValue}}" ></div>
                         <div class="widget-content text-left text-info">
-                            <table class="table table-condensed table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Description</th>
-                                        <th>Build Type</th>
-                                        <th>Category</th>
-                                        <th>T-7</th>
-                                        <th>T-6</th>
-                                        <th>T-5</th>
-                                        <th>T-4</th>
-                                        <th>T-3</th>
-                                        <th>T-2</th>
-                                        <th>T-1</th>
-                                        <th>T</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr data-ng-repeat="p in vm.curveStatus">
-                                        <td>{{p.name}}</td>
-                                        <td>{{p.description}}</td>
-                                        <td>{{p.buildType}}</td>
-                                        <td>{{p.category}}</td>
-                                        <td><i class="fa fa-circle" data-ng-class="{'faRed' : p.Tm7, 'faGreen' : p.Tm7 === false }"></i></td>
-                                        <td><i class="fa fa-circle" data-ng-class="{'faRed' : p.Tm6, 'faGreen' : p.Tm6 === false }"></i></td>
-                                        <td><i class="fa fa-circle" data-ng-class="{'faRed' : p.Tm5, 'faGreen' : p.Tm5 === false }"></i></td>
-                                        <td><i class="fa fa-circle" data-ng-class="{'faRed' : p.Tm4, 'faGreen' : p.Tm4 === false }"></i></td>
-                                        <td><i class="fa fa-circle" data-ng-class="{'faRed' : p.Tm3, 'faGreen' : p.Tm3 === false }"></i></td>
-                                        <td><i class="fa fa-circle" data-ng-class="{'faRed' : p.Tm2, 'faGreen' : p.Tm2 === false }"></i></td>
-                                        <td><i class="fa fa-circle" data-ng-class="{'faRed' : p.Tm1, 'faGreen' : p.Tm1 === false }"></i></td>
-                                        <td><i class="fa fa-circle" data-ng-class="{'faRed' : p.T, 'faGreen' : p.T === false }"></i></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="widget-foot">
-                            <div class="clearfix"></div>
+                            <div class="table-responsive">
+                                <input name="searchTmp" type="text" ng-model="vm.filterValue" />
+                                <table class="table table-condensed table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Resource</th>
+                                            <th>Name</th>
+                                            <th>Description</th>
+                                            <th>Build Type</th>
+                                            <th>Category</th>
+                                            <th>T-7</th>
+                                            <th>T-6</th>
+                                            <th>T-5</th>
+                                            <th>T-4</th>
+                                            <th>T-3</th>
+                                            <th>T-2</th>
+                                            <th>T-1</th>
+                                            <th>T</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr data-ng-repeat="p in vm.curveStatus | filter:vm.filterValue">
+                                            <td>{{p.resource}}</td>
+                                            <td>{{p.name}}</td>
+                                            <td>{{p.description}}</td>
+                                            <td>{{p.buildType}}</td>
+                                            <td>{{p.category}}</td>
+                                            <td><i class="fa fa-circle" data-ng-class="{'faRed' : p.Tm7, 'faGreen' : p.Tm7 === false }"></i></td>
+                                            <td><i class="fa fa-circle" data-ng-class="{'faRed' : p.Tm6, 'faGreen' : p.Tm6 === false }"></i></td>
+                                            <td><i class="fa fa-circle" data-ng-class="{'faRed' : p.Tm5, 'faGreen' : p.Tm5 === false }"></i></td>
+                                            <td><i class="fa fa-circle" data-ng-class="{'faRed' : p.Tm4, 'faGreen' : p.Tm4 === false }"></i></td>
+                                            <td><i class="fa fa-circle" data-ng-class="{'faRed' : p.Tm3, 'faGreen' : p.Tm3 === false }"></i></td>
+                                            <td><i class="fa fa-circle" data-ng-class="{'faRed' : p.Tm2, 'faGreen' : p.Tm2 === false }"></i></td>
+                                            <td><i class="fa fa-circle" data-ng-class="{'faRed' : p.Tm1, 'faGreen' : p.Tm1 === false }"></i></td>
+                                            <td><i class="fa fa-circle" data-ng-class="{'faRed' : p.T, 'faGreen' : p.T === false }"></i></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="widget-foot">
+                                <div class="clearfix"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
