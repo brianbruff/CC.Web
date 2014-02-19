@@ -959,6 +959,12 @@ form {
         color: #fff;
     }
 
+    .widget.wyellow .widget-head {
+        background-color: #ffd800;
+        border: 1px solid #ffd800;
+        color: #fff;
+    }
+
     .widget.wviolet .widget-head {
         background-color: #932ab6;
         border: 1px solid #932ab6;
@@ -1290,24 +1296,15 @@ form {
 
 /*Brian Starts*/
 
-.headerSearch {
-    display: inline;
-}
-
-.headerSearch>input {
-    max-height: 25px;
-    max-width: 100px;
-    vertical-align: middle;
+.searchFilter>input {
     background: transparent;
-    color: white;
-    font-weight: 300;
+    border: 0 !important;
+    border-bottom: 1px solid !important;
+    color: #31708f;
+    border-bottom-color: orange !important;
 }
 
-.headerSearch>label {
-    max-height: 25px;
-    font-size: 13px !important;
-    font-weight: 300;
-}
+
 
 /*Brian Ends*/
 

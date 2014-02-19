@@ -111,6 +111,8 @@
     <Content Include="app\config.exceptionHandler.js" />
     <Content Include="app\config.js" />
     <Content Include="app\config.route.js" />
+    <Content Include="app\curves\dependencies.html" />
+    <Content Include="app\curves\dependencies.js" />
     <Content Include="app\curves\overview.html" />
     <Content Include="app\curves\overview.js" />
     <Content Include="app\layout\shell.html" />
@@ -118,7 +120,6 @@
     <Content Include="app\layout\sidebar.html" />
     <Content Include="app\layout\sidebar.js" />
     <Content Include="app\layout\topnav.html" />
-    <Content Include="app\layout\searchwidgetheader.html" />
     <Content Include="app\layout\widgetheader.html" />
     <Content Include="app\services\datacontext.js" />
     <Content Include="app\services\directives.js" />

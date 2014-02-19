@@ -200,29 +200,4 @@
         }
     });
     
-    app.directive('ccSearchWidgetHeader', function () {
-        //Usage:
-        //<div data-cc-widget-header title="vm.map.title"></div>
-        var directive = {
-            link: link,
-            scope: {
-                'title': '@',
-                'subtitle': '@',
-                'rightText': '@',
-                'allowCollapse': '@',
-                'filterValue' : '@'
-            },
-            templateUrl: '/app/layout/searchwidgetheader.html',
-            restrict: 'A',
-        };
-        return directive;
-
-        function link(scope, element, attrs) {
-            attrs.$set('class', 'widget-head');
-            
-            //scope.$watch('filter-Value', function (val) {
-            //    element.html(val);
-            //});
-        }
-    });
 })();

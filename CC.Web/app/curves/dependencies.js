@@ -1,9 +1,9 @@
 ﻿(function () {
     'use strict';
-    var controllerId = 'overview';
-    angular.module('app').controller(controllerId, ['common', 'datacontext', overview]);
+    var controllerId = 'dependencies';
+    angular.module('app').controller(controllerId, ['common', 'datacontext', dependencies]);
 
-    function overview(common, datacontext) {
+    function dependencies(common, datacontext) {
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
 
@@ -18,14 +18,14 @@
         vm.categories = [];
         vm.types = [];
         vm.curveStatus = [];
-        vm.title = 'Overview';
+        vm.title = 'Dependencies';
 
         activate();
 
         function activate() {
             var promises = [getMessageCount(), getCurveCategories(), getCurveTypes(), getCurveStatus()];
             common.activateController(promises, controllerId)
-                .then(function () { log('Activated overview View'); });
+                .then(function () { log('Activated depencency View'); });
         }
 
         function getMessageCount() {
