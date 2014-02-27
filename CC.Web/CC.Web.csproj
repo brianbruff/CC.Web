@@ -115,6 +115,7 @@
     <Content Include="app\curves\dependencies.js" />
     <Content Include="app\curves\overview.html" />
     <Content Include="app\curves\overview.js" />
+    <Content Include="app\layout\dependencyFilterWidget.html" />
     <Content Include="app\layout\dependencyWidget.html" />
     <Content Include="app\layout\shell.html" />
     <Content Include="app\layout\shell.js" />

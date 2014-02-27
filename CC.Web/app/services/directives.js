@@ -200,15 +200,15 @@
         }
     });
     
-    app.directive('ccDependencyTree', function () {
+    app.directive('ccDependencyFilter', function () {
         //Usage:
-        //<div data-cc-dependency-tree dependencies="vm.dependencies"></div>
+        //<div data-cc-dependency-filter filter="vm.dependencies"></div>
         var directive = {
             link: link,
             scope: {
-                'dependencies': '@'
+                'filter': '@'
             },
-            templateUrl: '/app/layout/dependencywidget.html',
+            templateUrl: '/app/layout/dependencyFilterWidget.html',
             restrict: 'A',
         };
         return directive;

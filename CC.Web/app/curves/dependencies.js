@@ -19,6 +19,10 @@
         vm.types = [];
         vm.curveStatus = [];
         vm.title = 'Dependencies';
+        vm.suppliers = [];
+        vm.products = [];
+        vm.commodities = [];
+        vm.regions = [];
 
         activate();
 
