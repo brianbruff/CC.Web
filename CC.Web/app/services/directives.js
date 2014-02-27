@@ -200,4 +200,22 @@
         }
     });
     
+    app.directive('ccDependencyTree', function () {
+        //Usage:
+        //<div data-cc-dependency-tree dependencies="vm.dependencies"></div>
+        var directive = {
+            link: link,
+            scope: {
+                'dependencies': '@'
+            },
+            templateUrl: '/app/layout/dependencywidget.html',
+            restrict: 'A',
+        };
+        return directive;
+
+        function link(scope, element, attrs) {
+            attrs.$set('class', 'widget-dependency');
+        }
+    });
+    
 })();
