@@ -172,7 +172,9 @@
     <Content Include="content\toastr.css.map">
       <DependentUpon>toastr.css</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\GenicInsight - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\GenicInsight - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\GenicInsight - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\GenicInsight - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\angular-mocks.js" />

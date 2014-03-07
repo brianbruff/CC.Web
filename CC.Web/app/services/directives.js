@@ -206,7 +206,7 @@
         var directive = {
             link: link,
             scope: {
-                'filter': '@'
+                'filters': '='
             },
             templateUrl: '/app/layout/dependencyFilterWidget.html',
             restrict: 'A',

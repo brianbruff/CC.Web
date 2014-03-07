@@ -27,7 +27,7 @@
         activate();
 
         function activate() {
-            var promises = [getMessageCount(), getCurveCategories(), getCurveTypes(), getCurveStatus()];
+            var promises = [getMessageCount(), getCurveCategories(), getCurveTypes(), getCurveStatus(), getCommodities(), getRegions(), getSuppliers(), getProducts()];
             common.activateController(promises, controllerId)
                 .then(function () { log('Activated depencency View'); });
         }
@@ -53,6 +53,30 @@
         function getCurveStatus() {
             return datacontext.getCurveStatus().then(function (data) {
                 return vm.curveStatus = data;
+            });
+        }
+        
+        function getProducts() {
+            return datacontext.getProducts().then(function (data) {
+                return vm.products = data;
+            });
+        }
+        
+        function getSuppliers() {
+            return datacontext.getSuppliers().then(function (data) {
+                return vm.suppliers = data;
+            });
+        }
+        
+        function getRegions() {
+            return datacontext.getRegions().then(function (data) {
+                return vm.regions = data;
+            });
+        }
+        
+        function getCommodities() {
+            return datacontext.getCommodities().then(function (data) {
+                return vm.commodities = data;
             });
         }
     }
