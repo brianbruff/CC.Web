@@ -23,11 +23,12 @@
         vm.products = [];
         vm.commodities = [];
         vm.regions = [];
+        vm.dependencies = [];
 
         activate();
 
         function activate() {
-            var promises = [getMessageCount(), getCurveCategories(), getCurveTypes(), getCurveStatus(), getCommodities(), getRegions(), getSuppliers(), getProducts()];
+            var promises = [getMessageCount(), getCurveCategories(), getCurveTypes(), getCurveStatus(), getCommodities(), getRegions(), getSuppliers(), getProducts(), getDependencies()];
             common.activateController(promises, controllerId)
                 .then(function () { log('Activated depencency View'); });
         }
@@ -79,5 +80,13 @@
                 return vm.commodities = data;
             });
         }
+        
+        function getDependencies() {
+            return datacontext.getDependencies().then(function (data) {
+                return vm.dependencies = data;
+            });
+        }
+        
+
     }
 })();

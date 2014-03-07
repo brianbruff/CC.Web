@@ -206,7 +206,7 @@
         var directive = {
             link: link,
             scope: {
-                'filters': '='
+                filters: '='
             },
             templateUrl: '/app/layout/dependencyFilterWidget.html',
             restrict: 'A',
@@ -217,5 +217,61 @@
             attrs.$set('class', 'widget-dependency');
         }
     });
+    
+    //app.directive('ccDependencyTree', function ($compile) {
+    //    //Usage:
+    //    //<div data-cc-dependency-filter filter="vm.dependencies"></div>
+    //    var directive = {
+    //        link: link,
+    //        scope: {
+    //            dependencies: '='
+    //        },
+    //        templateUrl: '/app/layout/dependencyTreeWidget.html',
+    //        restrict: 'E',
+    //    };
+    //    return directive;
+
+    //    function link(scope, element, attrs) {
+    //        //attrs.$set('class', 'widget-dependency-tree');
+    //        if (angular.isArray(scope.dependencies.dependencies)) {
+    //            element.append("<data-cc-dependency-tree dependencies='dependencies.dependencies'></data-cc-dependency-tree>");
+    //            $compile(element.contents())(scope);
+    //        }
+
+    //    }
+    //});
+    
+    app.directive('collection', function ($compile) {
+        //Usage:
+        //<div data-cc-dependency-filter filter="vm.dependencies"></div>
+        var directive = {
+            scope: {
+                collection: '='
+            },
+            replace: true,
+            template: "<ul><member ng-repeat='member in collection' member='member'></member></ul>",
+            //templateUrl: '/app/layout/dependencyTreeWidget.html',
+            restrict: 'E',
+        };
+        return directive;
+    });
+    
+
+    app.directive('member', function ($compile) {
+        return {
+            restrict: "E",
+            replace: true,
+            scope: {
+                member: '='
+            },
+            template: "<li>{{member.name}}</li>",
+            link: function (scope, element, attrs) {
+                if (angular.isArray(scope.member.children)) {
+                    element.append("<collection collection='member.children'></collection>");
+                    $compile(element.contents())(scope);
+                }
+            }
+        }
+    })
     
 })();
