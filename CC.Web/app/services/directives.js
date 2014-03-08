@@ -220,7 +220,7 @@
     
     
     
-    app.directive('collection', function ($compile) {
+    app.directive('dependencies', function ($compile) {
         var directive = {
             scope: {
                 dependencies: '='
@@ -242,7 +242,7 @@
             template: "<li>{{curve.name}}</li>",
             link: function (scope, element, attrs) {
                 if (angular.isArray(scope.curve.children)) {
-                    element.append("<collection dependencies='curve.children'></collection>");
+                    element.append("<dependencies dependencies='curve.children'></dependencies>");
                     $compile(element.contents())(scope);
                 }
             }
