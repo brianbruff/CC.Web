@@ -116,6 +116,7 @@
     <Content Include="app\curves\overview.html" />
     <Content Include="app\curves\overview.js" />
     <Content Include="app\layout\dependencyFilterWidget.html" />
+    <Content Include="app\layout\dependencyTreeWidgetItem.html" />
     <Content Include="app\layout\dependencyTreeWidget.html" />
     <Content Include="app\layout\shell.html" />
     <Content Include="app\layout\shell.js" />

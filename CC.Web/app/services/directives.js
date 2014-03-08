@@ -239,7 +239,7 @@
             scope: {
                 curve: '='
             },
-            template: "<li>{{curve.name}}</li>",
+            templateUrl: '/app/layout/dependencyTreeWidgetItem.html',
             link: function (scope, element, attrs) {
                 if (angular.isArray(scope.curve.children)) {
                     element.append("<dependencies dependencies='curve.children'></dependencies>");

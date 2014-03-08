@@ -96,6 +96,7 @@
             var status = [
                 { name: 'Oil' },
                 { name: 'Products' },
+                { name: 'Power' },
             ];
             return $q.when(status);
         }
