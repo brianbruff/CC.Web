@@ -232,17 +232,17 @@
     });
     
 
-    app.directive('member', function ($compile) {
+    app.directive('curve', function ($compile) {
         return {
             restrict: "E",
             replace: true,
             scope: {
-                member: '='
+                curve: '='
             },
-            template: "<li>{{member.name}}</li>",
+            template: "<li>{{curve.name}}</li>",
             link: function (scope, element, attrs) {
-                if (angular.isArray(scope.member.children)) {
-                    element.append("<collection dependencies='member.children'></collection>");
+                if (angular.isArray(scope.curve.children)) {
+                    element.append("<collection dependencies='curve.children'></collection>");
                     $compile(element.contents())(scope);
                 }
             }
