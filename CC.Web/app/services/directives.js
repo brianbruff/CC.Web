@@ -225,6 +225,7 @@
             scope: {
                 dependencies: '='
             },
+            replace: true,
             templateUrl: '/app/layout/dependencyTreeWidget.html',
             restrict: 'E',
         };
