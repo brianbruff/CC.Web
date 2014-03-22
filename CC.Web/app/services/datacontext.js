@@ -55,7 +55,7 @@
             var status = [
                 { name: 'ICE' },
                 { name: 'Platts' },
-                { name: 'Supplier1' },
+                { name: 'EEX' },
                 { name: 'Supplier2' },
                 { name: 'Supplier3' },
                 { name: 'Supplier4' },
@@ -114,7 +114,12 @@
                         { name: "Power NL Broker2 Bootstrap", code: 5, status: 0 },
                         { name: "Power NL Broker3 Bootstrap", code: 6, status: -1 }]
                 }]
-            }, { name: "Bootstrap Gas Prebon", code: 7, status: 1 }];
+            }, {
+                name: "Gas ABC Final", code: 7, status: 1, children: [
+                       { name: "Gas ABC Broker1 Bootstrap", code: 7, status: 1 },
+                       { name: "Gas ABC Broker2 Bootstrap", code: 8, status: 1 },
+                       { name: "Gas ABC Broker3 Bootstrap", code: 9, status: 1 }]
+            }];
             
             return $q.when(dependencies);
         }
