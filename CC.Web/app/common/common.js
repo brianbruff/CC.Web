@@ -24,6 +24,7 @@
         };
     });
 
+
     commonModule.factory('common',
         ['$q', '$rootScope', '$timeout', 'commonConfig', 'logger', common]);
 

@@ -51,6 +51,17 @@
                         content: '<i class="fa fa-lock orange"></i> Admin'
                     }
                 }
+            },
+            {
+                url: '/gdmx',
+                config: {
+                    title: 'Gdmx Diff',
+                    templateUrl: 'app/gdmx/diff.html',
+                    settings: {
+                        nav: 4,
+                        content: '<i class="fa fa-random orange"></i> Diff'
+                    }
+                }
             }
         ];
     }
