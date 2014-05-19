@@ -53,7 +53,7 @@
                 }
             },
             {
-                url: '/gdmx',
+                url: '/gdmxDiff',
                 config: {
                     title: 'Gdmx Diff',
                     templateUrl: 'app/gdmx/diff.html',

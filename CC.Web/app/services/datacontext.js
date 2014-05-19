@@ -123,5 +123,9 @@
             
             return $q.when(dependencies);
         }
+        
+        function getGdmx34Diff() {
+            
+        }
     }
 })();
