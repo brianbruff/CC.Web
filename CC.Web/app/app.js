@@ -3,9 +3,10 @@
     
     var app = angular.module('app', [
         // Angular modules 
-        'ngAnimate',        // animations
-        'ngRoute',          // routing
-        'ngSanitize',       // sanitizes html bindings (ex: sidebar.js)
+        'ngAnimate',            // animations
+        'ngRoute',              // routing
+        'ngSanitize',           // sanitizes html bindings (ex: sidebar.js)
+        'angularFileUpload',    // upload file directive
 
         // Custom modules 
         'common',           // common functions, logger, spinner
