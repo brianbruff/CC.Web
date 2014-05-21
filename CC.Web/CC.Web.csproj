@@ -187,6 +187,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
+    <Content Include="Scripts\angular-file-upload-html5-shim.js" />
+    <Content Include="Scripts\angular-file-upload-html5-shim.min.js" />
+    <Content Include="Scripts\angular-file-upload-shim.js" />
+    <Content Include="Scripts\angular-file-upload-shim.min.js" />
+    <Content Include="Scripts\angular-file-upload.js" />
+    <Content Include="Scripts\angular-file-upload.min.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular-sanitize.js" />
@@ -209,6 +215,8 @@
     <Content Include="Scripts\breeze.angular.q.js" />
     <Content Include="Scripts\breeze.directives.validation.js" />
     <Content Include="Scripts\breeze.saveErrorExtensions.js" />
+    <Content Include="Scripts\FileAPI.flash.swf" />
+    <Content Include="Scripts\FileAPI.min.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
     <Content Include="Scripts\jquery-2.0.3.min.map" />
@@ -224,7 +232,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\.gitignore" />
-    <Content Include="App_Data\CodeCamper.sdf" />
     <Content Include="ccfavicon.ico" />
     <Content Include="content\images\icon.png" />
     <Content Include="content\images\photos\aaron_skonnard.jpg" />

@@ -1,12 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+VisualStudioVersion = 12.0.30324.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CC.Web", "CC.Web\CC.Web.csproj", "{6A558929-7C91-47C5-B4AB-7B1E39712EA2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6878C8AB-DBD3-43A2-963B-06697CB24AFC}"
 	ProjectSection(SolutionItems) = preProject
+		CC.Web\Controllers\FilesController.cs = CC.Web\Controllers\FilesController.cs
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets

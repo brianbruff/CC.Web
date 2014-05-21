@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -14,7 +13,7 @@ namespace CC.Web.Controllers
 {
     public class FilesController : ApiController
     {
-        [HttpPost] // This is from System.Web.Http, and not from System.Web.Mvc
+        [HttpPost] 
         public async Task<HttpResponseMessage> Upload()
         {
             if (!Request.Content.IsMimeMultipartContent())
