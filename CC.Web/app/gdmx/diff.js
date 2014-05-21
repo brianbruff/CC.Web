@@ -33,7 +33,7 @@
                 vm.upload = $upload.upload({
                     url: '/api/Files/', 
                     method: 'POST',
-                    data: {side: side},
+                    data: {Side: side},
                     file: file,
                 }).progress(function(evt) {
                 }).success(function(data, status, headers, config) {
