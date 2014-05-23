@@ -13,6 +13,7 @@
         vm.getDiff = getDiff;
         vm.onFileSelect = onFileSelect;
         vm.upload = {};
+        vm.comparison = {};
 
 
         activate();
@@ -32,8 +33,8 @@
                     data: { side: { side: side } },
                     file: file,
                 }).success(function (data) {
-                    var diffs = JSON.parse(data);
-                    logSuccess(diffs);
+                    //logSuccess("Processed");
+                    vm.comparison = data;
                 }).error(function (data, status) {
                     logError('Failed to send file ' + status);
                 });
