@@ -1,17 +1,15 @@
 ﻿(function () {
     'use strict';
     var controllerId = 'gdmxDiff';
-    angular.module('app').controller(controllerId, ['common', 'datacontext', '$upload', dependencies]);
+    angular.module('app').controller(controllerId, ['common', 'datacontext', '$upload', gdmxDiffController]);
 
-    function dependencies(common, datacontext, $upload) {
+    function gdmxDiffController(common, datacontext, $upload) {
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
         var logError = getLogFn(controllerId, 'error');
+        var logSuccess = getLogFn(controllerId, 'success');
 
         var vm = this;
-
-//        vm.leftFile = null;
-//        vm.rightFile = null;
         vm.getDiff = getDiff;
         vm.onFileSelect = onFileSelect;
         vm.upload = {};
@@ -26,23 +24,20 @@
         }
         
         function onFileSelect($files, side) {
-            
-            //$files: an array of files selected, each file has name, size, and type.
             for (var i = 0; i < $files.length; i++) {
                 var file = $files[i];
                 vm.upload = $upload.upload({
                     url: '/api/Files/', 
                     method: 'POST',
-                    data: {Side: side},
+                    data: { side: { side: side } },
                     file: file,
-                }).progress(function(evt) {
-                }).success(function(data, status, headers, config) {
-                    logSuccess(data);
-                }).error(function (data, status, headers, config) {
+                }).success(function (data) {
+                    var diffs = JSON.parse(data);
+                    logSuccess(diffs);
+                }).error(function (data, status) {
                     logError('Failed to send file ' + status);
                 });
             }
-            
         }
         
 

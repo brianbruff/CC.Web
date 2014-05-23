@@ -6,7 +6,7 @@ using System.Web;
 namespace CC.Web.Models
 {
     public class UploadData
-    {
+    {        
         public string Side { get; set; }
     }
 }

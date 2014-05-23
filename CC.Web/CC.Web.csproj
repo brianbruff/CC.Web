@@ -46,6 +46,9 @@
     <Reference Include="Breeze.WebApi2">
       <HintPath>..\packages\Breeze.Server.WebApi2.1.4.8\lib\Breeze.WebApi2.dll</HintPath>
     </Reference>
+    <Reference Include="GdmxDiff.BL">
+      <HintPath>..\..\Gdmx Diff\GdmxDiff.BL\bin\Debug\GdmxDiff.BL.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
@@ -301,7 +304,9 @@
     <Compile Include="Models\UploadData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
