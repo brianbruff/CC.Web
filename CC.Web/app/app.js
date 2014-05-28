@@ -7,6 +7,7 @@
         'ngRoute',              // routing
         'ngSanitize',           // sanitizes html bindings (ex: sidebar.js)
         'angularFileUpload',    // upload file directive
+        'easypiechart',         // pie chart
 
         // Custom modules 
         'common',           // common functions, logger, spinner

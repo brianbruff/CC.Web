@@ -10,7 +10,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="leftInputFile">Left File</label>
-                                        <input type="file" id="leftInputFile" name="leftInputFile" data-ng-file-select="vm.onFileSelect($files, 'left')" >
+                                        <input type="file" id="leftInputFile" name="leftInputFile" data-ng-file-select="vm.onFileSelect($files, 'left')">
                                         <p class="help-block">Select first file to compare.</p>
                                     </div>
                                 </div>
@@ -28,43 +28,93 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-4">
-                    <div class="widget wgreen">
-                        <div data-cc-widget-header title="Models" allow-collapse="false"></div>
-                        <div class="widget-content text-left text-info">
-                            models
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="widget worange">
-                        <div data-cc-widget-header title="Profiles" allow-collapse="false"></div>
-                        <div class="widget-content text-left text-info">
-                            profiles
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="widget wyellow">
-                        <div data-cc-widget-header title="Versions" allow-collapse="false"></div>
-                        <div class="widget-content text-left text-info">
-                            versions
-
-                        </div>
-                    </div>
-                </div>
             </div>
 
 
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="widget wblue">
-                        <div data-cc-widget-header title="Summary" subtitle="Information" allow-collapse="true"></div>
-                        <div class="widget-content text-left text-info">
-                            <div class="css-treeview">
+            <div data-ng-show="vm.comparison != null">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="widget wblue">
+                            <div data-cc-widget-header title="Summary" data-subtitle="Information" data-allow-collapse="true"></div>
+                            <div class="widget-content text-left text-info">
+                                <div class="row">
+
+                                    <div class="col-md-2">
+                                        <div class="epc">
+                                            <span class="chart" easypiechart percent="vm.modelMismatchCount" options="vm.modelEpcOptions">
+                                                <span class="epc-count">{{vm.modelMismatchCount}}</span>
+                                            </span>
+                                            <div class="title">
+                                                Models
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="epc">
+                                            <span class="chart" easypiechart percent="vm.profileMismatchCount" data-options="vm.profileEpcOptions">
+                                                <span class="epc-count">{{vm.profileMismatchCount}}</span>
+                                            </span>
+                                            <div class="title">
+                                                Profiles
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                   
+                                    <div class="col-md-2">
+                                        <div class="epc">
+                                            <span class="chart" easypiechart percent="vm.versionMismatchCount" data-options="vm.versionEpcOptions">
+                                                <span class="epc-count">{{vm.versionMismatchCount}}</span>
+                                            </span>
+                                            <div class="title">
+                                                Versions
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="widget wgreen">
+                            <div data-cc-widget-header title="Models" allow-collapse="false"></div>
+                            <div class="widget-content text-left text-info">
+                                <table class="table table-hover table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Uri</th>
+                                        </tr>
+                                    </thead>
+                                    <tr data-ng-repeat="c in vm.comparison">
+                                        <td>
+                                            {{c.Uri}}
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="widget worange">
+                            <div data-cc-widget-header title="Profiles" allow-collapse="false"></div>
+                            <div class="widget-content text-left text-info">
+                                profiles
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="widget wyellow">
+                            <div data-cc-widget-header title="Versions" allow-collapse="false"></div>
+                            <div class="widget-content text-left text-info">
+                                versions
 
                             </div>
                         </div>

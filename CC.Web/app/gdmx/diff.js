@@ -13,15 +13,25 @@
         vm.getDiff = getDiff;
         vm.onFileSelect = onFileSelect;
         vm.upload = {};
-        vm.comparison = {};
+        vm.comparison = null;
 
 
+        vm.modelEpcOptions = { animate: true, barColor: '#FF0000', scaleColor: true, lineWidth: 3, lineCap: 'butt' };
+        vm.profileEpcOptions = { animate: true, barColor: '#E67E22', scaleColor: true, lineWidth: 3, lineCap: 'butt' };
+        vm.versionEpcOptions = { animate: true, barColor: '#0000FF', scaleColor: true, lineWidth: 3, lineCap: 'butt' };
+        
         activate();
 
         function activate() {
             common.activateController([], controllerId).then(function() {
                 log('Activated Gdmx Diff');
             });
+        }
+        
+        function calculateMetrics() {
+            vm.modelMismatchCount = vm.comparison.length;
+            vm.profileMismatchCount = "20";
+            vm.versionMismatchCount = "40";
         }
         
         function onFileSelect($files, side) {
@@ -33,8 +43,9 @@
                     data: { side: { side: side } },
                     file: file,
                 }).success(function (data) {
-                    //logSuccess("Processed");
+                    //logSuccess("Diff result retrieved");
                     vm.comparison = data;
+                    calculateMetrics();
                 }).error(function (data, status) {
                     logError('Failed to send file ' + status);
                 });
