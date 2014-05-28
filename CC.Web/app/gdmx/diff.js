@@ -30,8 +30,19 @@
         
         function calculateMetrics() {
             vm.modelMismatchCount = vm.comparison.length;
-            vm.profileMismatchCount = "20";
-            vm.versionMismatchCount = "40";
+            vm.profileMismatchCount = 0;
+            vm.versionMismatchCount = 0;
+
+            angular.forEach(vm.comparison, function (model) {
+                vm.profileMismatchCount += model.profiles.length;
+                angular.forEach(model.profiles, function (profile) {
+                    vm.versionMismatchCount += profile.versions.length;
+
+                });
+
+            });
+
+            
         }
         
         function onFileSelect($files, side) {
